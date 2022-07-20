@@ -1,7 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:project/google_demo.dart';
+import 'package:project/login_page.dart';
 
 class SplashPage extends StatefulWidget {
   // const SplashPage({Key: key}) : super(key: key);
@@ -19,10 +19,7 @@ class _SplashPageState extends State<SplashPage> {
       // ignore: use_build_context_synchronously
       Navigator.push(
         context,
-        MaterialPageRoute(
-            builder: (context) => const MyHomePage(
-                  title: '',
-                )),
+        MaterialPageRoute(builder: (context) => loginpage()),
       );
     });
     super.initState();
@@ -32,9 +29,12 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('image/logo.png', width: 100, height: 100),
+            Image.asset(
+              'image/logo.png',
+              width: 100, /*height: 100*/
+            ),
           ],
         ),
       ),
