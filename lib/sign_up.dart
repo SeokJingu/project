@@ -1,17 +1,14 @@
-// ignore_for_file: use_key_in_widget_constructors
-
 import 'package:flutter/material.dart';
-import 'package:project/google_demo.dart';
-import 'package:project/sign_up.dart';
+import 'package:project/login_page.dart';
 
-class loginpage extends StatefulWidget {
+class signup extends StatefulWidget {
   // const SplashPage({Key: key}) : super(key: key);
 
   @override
-  State<loginpage> createState() => _loginpageState();
+  State<signup> createState() => _signupState();
 }
 
-class _loginpageState extends State<loginpage> {
+class _signupState extends State<signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +34,11 @@ class _loginpageState extends State<loginpage> {
                   labelText: "비밀번호",
                 ),
               ),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: "닉네임",
+                ),
+              ),
               Container(
                 width: double.infinity,
                 //margin: EdgeInsets.only(top: 24),
@@ -46,16 +48,6 @@ class _loginpageState extends State<loginpage> {
                     children: [
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text("로그인"),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          print("aa");
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => signup()));
-                        },
                         child: Text("회원가입"),
                       ),
                     ]),
