@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'splash_page.dart';
+
+import 'home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Video Ground',
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+      home: HomePage(),
     );
   }
 }
