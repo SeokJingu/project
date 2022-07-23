@@ -47,7 +47,13 @@ class _signupState extends State<signup> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => loginpage()),
+                          );
+                        },
                         child: Text("회원가입"),
                       ),
                     ]),
