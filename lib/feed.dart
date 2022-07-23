@@ -8,8 +8,7 @@ class Feed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return ListView(
       children: [
         Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -103,7 +102,7 @@ class Feed extends StatelessWidget {
           ),
         ),
 
-// 다음 섹션구분/////////////////////////////////////////////
+// // 다음 섹션구분/////////////////////////////////////////////
 
         Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
