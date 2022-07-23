@@ -59,26 +59,17 @@ class HomePage extends StatelessWidget {
               // ),
               Padding(
             padding: const EdgeInsets.all(1),
-            child: Image.asset('image/logo.png', width: 5, height: 5),
+            child: Image.asset('image/logo.png',
+                width: 1, height: 1), //이미지 크기 조정 안됨
           ),
-          // Center(
-          //   child:
-          //       Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-          //     ButtonBar(
-          //       // 버튼 바
-          //       alignment: MainAxisAlignment.start, // 중앙 정렬
-          //       buttonPadding: EdgeInsets.all(20), // 버튼의 패딩 주기
-          //       children: [
-          //         ElevatedButton(onPressed: () {}, child: Text('시나리오')),
-          //         ElevatedButton(onPressed: () {}, child: Text('편집')),
-          //       ],
-          //     )
-          //   ]),
-          // ),
           actions: [
             IconButton(
               onPressed: () {},
               icon: Icon(CupertinoIcons.search, color: Colors.black),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(CupertinoIcons.bell, color: Colors.black),
             ),
           ],
           //1■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -89,19 +80,42 @@ class HomePage extends StatelessWidget {
           //2■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
           backgroundColor: Colors.white,
         ),
-        body: Feed(),
-        bottomNavigationBar: BottomNavigationBar(items: [
+        body:
+            // Center(
+            //   child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+            //     ButtonBar(
+            //       // 버튼 바
+            //       alignment: MainAxisAlignment.start, // 중앙 정렬
+            //       buttonPadding: EdgeInsets.all(20), // 버튼의 패딩 주기
+            //       children: [
+            //         ElevatedButton(onPressed: () {}, child: Text('시나리오')),
+            //         ElevatedButton(onPressed: () {}, child: Text('편집')),
+            //       ],
+            //     )
+            //   ]),
+            // ),
+            Feed(),
+        bottomNavigationBar:
+            BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: '홈',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: '탐색',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.star),
+            label: '인기게시물',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat_bubble),
-            label: 'Notification',
+            label: '채팅',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: '나의 계정',
           ),
         ])
         //2■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
