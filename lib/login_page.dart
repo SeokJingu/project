@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:project/google_demo.dart';
+import 'package:project/home_page.dart';
 import 'package:project/sign_up.dart';
 
 class loginpage extends StatefulWidget {
@@ -45,7 +46,13 @@ class _loginpageState extends State<loginpage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          print("aa");
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
+                        },
                         child: Text("로그인"),
                       ),
                       ElevatedButton(

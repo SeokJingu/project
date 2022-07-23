@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'splash_page.dart';
 import 'home_page.dart';
 
 void main() {
@@ -12,8 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Video Ground',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }
