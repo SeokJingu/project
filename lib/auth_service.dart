@@ -12,7 +12,29 @@ class AuthService extends ChangeNotifier {
     required Function onSuccess, // 가입 성공시 호출되는 함수
     required Function(String err) onError, // 에러 발생시 호출되는 함수
   }) async {
-    // 회원가입
+    if (email.isEmpty) {
+      onError("이메일을 입력해 주세요.");
+      return;
+    } else if (password.isEmpty) {
+      onError("비밀번호를 입력해 주세요.");
+      return;
+    }
+    // firebase auth 회원 가입
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      // 성공 함수 호출
+      onSuccess();
+    } on FirebaseAuthException catch (e) {
+      // Firebase auth 에러 발생
+      onError(e.message!);
+    } catch (e) {
+      // Firebase auth 이외의 에러 발생
+      onError(e.toString());
+    }
   }
 
   void signIn({
