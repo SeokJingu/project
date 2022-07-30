@@ -77,6 +77,17 @@ class _signupState extends State<signup> {
                           },
                           child: Text("회원가입"),
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            print("aa");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => loginpage()),
+                            );
+                          },
+                          child: Text("뒤로가기"),
+                        ),
                       ]),
                 )
               ],
