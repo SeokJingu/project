@@ -16,6 +16,9 @@ class loginpage extends StatefulWidget {
 }
 
 class _loginpageState extends State<loginpage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Consumer<AuthService>(builder: (context, authService, child) {
@@ -31,13 +34,15 @@ class _loginpageState extends State<loginpage> {
                   padding: const EdgeInsets.all(32),
                   child: Image.asset('image/logo.png', width: 100, height: 100),
                 ),
-                const TextField(
+                TextField(
+                  controller: emailController,
                   decoration: InputDecoration(
                     labelText: "이메일",
                   ),
                 ),
-                const TextField(
+                TextField(
                   obscureText: true,
+                  controller: passwordController,
                   decoration: InputDecoration(
                     labelText: "비밀번호",
                   ),
@@ -51,11 +56,29 @@ class _loginpageState extends State<loginpage> {
                       children: [
                         ElevatedButton(
                           onPressed: () {
-                            print("aa");
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => HomePage()));
+                            // 로그인
+                            authService.signIn(
+                              email: emailController.text,
+                              password: passwordController.text,
+                              onSuccess: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => HomePage()));
+                                // 로그인 성공
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text("로그인 성공"),
+                                ));
+                              },
+                              onError: (err) {
+                                // 에러 발생
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text(err),
+                                ));
+                              },
+                            );
                           },
                           child: Text("로그인"),
                         ),

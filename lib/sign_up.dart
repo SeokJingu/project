@@ -38,7 +38,7 @@ class _signupState extends State<signup> {
                 ),
                 TextField(
                   controller: passwordController,
-                  obscureText: false,
+                  obscureText: true,
                   decoration: InputDecoration(
                     hintText: "비밀번호",
                   ),
