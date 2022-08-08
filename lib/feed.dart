@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project/postdetail.dart';
 
 class Feed extends StatelessWidget {
   const Feed({
@@ -10,20 +11,6 @@ class Feed extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            ButtonBar(
-              // 버튼 바
-              alignment: MainAxisAlignment.start, // 중앙 정렬
-              buttonPadding: EdgeInsets.all(20), // 버튼의 패딩 주기
-              children: [
-                ElevatedButton(onPressed: () {}, child: Text('시나리오')),
-                ElevatedButton(onPressed: () {}, child: Text('편집')),
-              ],
-            )
-          ]),
-        ),
-
         // 제목
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -103,20 +90,6 @@ class Feed extends StatelessWidget {
         ),
 
 // // 다음 섹션구분/////////////////////////////////////////////
-
-        Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            ButtonBar(
-              // 버튼 바
-              alignment: MainAxisAlignment.start, // 중앙 정렬
-              buttonPadding: EdgeInsets.all(20), // 버튼의 패딩 주기
-              children: [
-                ElevatedButton(onPressed: () {}, child: Text('시나리오')),
-                ElevatedButton(onPressed: () {}, child: Text('편집')),
-              ],
-            )
-          ]),
-        ),
 
         // 제목
         Padding(

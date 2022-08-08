@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project/postdetail.dart';
 import 'package:provider/provider.dart';
 import 'auth_service.dart';
 import 'feed.dart';
@@ -14,9 +15,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   get children => null;
   get title => null;
+  var mainPageState = 1;
   // void _onItemTapped(int index) {
   @override
   Widget build(BuildContext context) {
+    mainPageState = 1;
     return Consumer<AuthService>(builder: (context, authService, child) {
       final user = authService.currentUser();
       return Scaffold(
@@ -56,21 +59,35 @@ class _HomePageState extends State<HomePage> {
             //2■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
             backgroundColor: Colors.white,
           ),
-          body:
-              // Center(
-              //   child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-              //     ButtonBar(
-              //       // 버튼 바
-              //       alignment: MainAxisAlignment.start, // 중앙 정렬
-              //       buttonPadding: EdgeInsets.all(20), // 버튼의 패딩 주기
-              //       children: [
-              //         ElevatedButton(onPressed: () {}, child: Text('시나리오')),
-              //         ElevatedButton(onPressed: () {}, child: Text('편집')),
-              //       ],
-              //     )
-              //   ]),
-              // ),
-              Feed(),
+          //body:
+          // Center(
+          //   child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          //     ButtonBar(
+          //       // 버튼 바
+          //       alignment: MainAxisAlignment.start, // 중앙 정렬
+          //       buttonPadding: EdgeInsets.all(20), // 버튼의 패딩 주기
+          //       children: [
+          //         ElevatedButton(onPressed: () {}, child: Text('시나리오')),
+          //         ElevatedButton(onPressed: () {}, child: Text('편집')),
+          //       ],
+          //     )
+          //   ]),
+          // ),
+          body: const Center(child: Feed()),
+
+          //PostDetail(),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Center(child: PostDetail());
+              setState(() {});
+
+              /*Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PostDetail()),
+              );*/
+            },
+            child: const Icon(Icons.create),
+          ),
           bottomNavigationBar:
               BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
             BottomNavigationBarItem(
