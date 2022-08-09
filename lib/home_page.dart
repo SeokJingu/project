@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project/postdetail.dart';
+import 'package:project/write_page.dart';
 import 'package:provider/provider.dart';
 import 'auth_service.dart';
 import 'feed.dart';
@@ -78,13 +79,10 @@ class _HomePageState extends State<HomePage> {
           //PostDetail(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              Center(child: PostDetail());
-              setState(() {});
-
-              /*Navigator.push(
+              Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PostDetail()),
-              );*/
+                MaterialPageRoute(builder: (context) => WritePage()),
+              );
             },
             child: const Icon(Icons.create),
           ),
@@ -94,10 +92,11 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.home),
               label: '홈',
             ),
-            BottomNavigationBarItem(
+/*            BottomNavigationBarItem(
               icon: Icon(Icons.chat_bubble),
               label: '채팅',
             ),
+*/
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: '나의 계정',
